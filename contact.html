@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CONTACT FORM</title>      
+<link rel="stylesheet"         href="contact.css">
+</head>
+<body>
+  
+    
+  
+
+
+
+<div class="container">
+  <p>
+    <a href="index.html">BACK</a>
+  </p>
+  <form onsubmit="sendEmail(); reset(); return false;">
+      <h3>GET IN TOUCH</h3>
+      
+    
+    <input type="text" id="name"  placeholder="Your name.." required>
+
+    
+    <input type="email" id="email"  placeholder="Your email.." required>
+    <input type="text" id="phone"  placeholder="Your phone no." required>
+    
+   
+    <textarea id="message" name="subject" rows="4" placeholder="How can we help you"></textarea>
+
+    <button type="submit" >Send </button>
+  </form>
+</div>
+  <script src=" https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendEmail(){
+                Email.send({
+            Host : "smtp.gmail.com",
+            Username : "cateringdindu@gmail.com",
+            Password : "0777399209",
+            To : 'dinducatering@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : "New Contact Form Inquiry",
+            Body : "And this is the body"
+        }).then(
+        message => alert(message)
+        );
+            }
+  </script>
+</body>
+</html>
